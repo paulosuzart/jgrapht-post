@@ -27,9 +27,6 @@ public class IO {
      */
     public Importer<String, DefaultEdge> locationsFromResourceCSV(String csvFileName) {
         return () -> {
-            new CSVImporter<String, DefaultEdge>() {
-
-            };
             var target = new SimpleDirectedGraph<String, DefaultEdge>(DefaultEdge.class);
             var importer = new CSVImporter<String, DefaultEdge>(CSVFormat.EDGE_LIST);
             importer.setVertexFactory(Function.identity());
