@@ -3,6 +3,7 @@ package io.graphex;
 import io.graphex.alg.TopPages;
 import io.graphex.alg.scoring.SumScoresDecorator;
 import io.graphex.io.IO;
+import org.jgrapht.Graph;
 import org.jgrapht.alg.scoring.BetweennessCentrality;
 import org.jgrapht.alg.transform.LineGraphConverter;
 import org.jgrapht.graph.DefaultEdge;
@@ -53,7 +54,7 @@ public class Application {
         System.out.println(locationsGraph);
     }
 
-    private static void vizPages(org.jgrapht.Graph<String, DefaultEdge> locationsGraph, SimpleDirectedGraph<DefaultEdge, DefaultEdge> pagesGraph, SumScoresDecorator<String, DefaultEdge, Double> pageScores, DefaultEdge rootPage) {
+    private static void vizPages(Graph<String, DefaultEdge> locationsGraph, SimpleDirectedGraph<DefaultEdge, DefaultEdge> pagesGraph, SumScoresDecorator<String, DefaultEdge, Double> pageScores, DefaultEdge rootPage) {
         DOTExporter<DefaultEdge, DefaultEdge> exporter2 = new DOTExporter<>();
         exporter2.setVertexIdProvider(page -> {
             boolean isHome = rootPage.equals(page);
