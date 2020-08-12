@@ -50,7 +50,7 @@ public class Application {
     private static void vizLocations(org.jgrapht.Graph<String, DefaultEdge> locationsGraph) {
         DOTExporter<String, DefaultEdge> exporter = new DOTExporter<>();
         exporter.setVertexIdProvider(e -> e);
-        exporter.exportGraph(locationsGraph, new File("/home/paul/Desktop/g.dot"));
+        exporter.exportGraph(locationsGraph, new File("/tmp/g.dot"));
         System.out.println(locationsGraph);
     }
 
